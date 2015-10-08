@@ -13,4 +13,21 @@ public class testing {
 		assertEquals("The house has been sold! You have been given a 3 month notice to move out!", TenantDatabase.noticeToTenants());
 	}
 	
+	@Test
+	public void testInformationOver(){
+		int roomNumber = 100;
+		assertEquals("Out of Bounds", GetInfo.information(roomNumber));
+	}
+	
+	@Test
+	public void testInformationInside(){
+		int roomNumber = 4;
+		assertEquals("d (403)466-6233 ddddd@hotmail.com $400", GetInfo.information(roomNumber));
+	}
+	
+	@Test
+	public void testInformationUnder(){
+		int roomNumber = 0;
+		assertEquals("Out of Bounds", GetInfo.information(roomNumber));
+	}
 }
