@@ -1,4 +1,8 @@
+import static org.junit.Assert.*;
+
 import java.util.Scanner;
+
+import org.junit.Test;
 
 public class TenantDatabase {
 	//the variables below store information about each tenant
@@ -151,13 +155,19 @@ public class TenantDatabase {
 			exit0();
 		}
 		
+		
 		//gives a notice to tenants when the house sells
 		if(first.equals("house") && second.equals("sold")){
-			HouseHasSold notice = new HouseHasSold();
-			notice.noticeToTenants();
+			System.out.println(noticeToTenants());
 			
 		}
 		
+	}
+	
+
+	public static String noticeToTenants(){
+		String notice = "The house has been sold! You have been given a 3 month notice to move out!";
+		return notice;
 	}
 	//exit prompt method
 	public static void exit0(){
