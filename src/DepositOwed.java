@@ -1,4 +1,4 @@
-
+//returns the deposit value for the room
 public class DepositOwed extends TenantDatabase{
 	public DepositOwed(int roomNumber) {
 		

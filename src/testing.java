@@ -48,4 +48,16 @@ public class testing {
 		int roomNumber = 0;
 		assertEquals("Out of Bounds", GetInfo.information(roomNumber));
 	}
+	
+	@Test
+	public void testInformationBorder(){
+		int roomNumber = 0;
+		assertEquals("Out of Bounds", GetInfo.information(roomNumber));
+	}
+	
+	@Test
+	public void testDamagedRoomBorder(){
+		int roomNumber = 0;
+		assertEquals("Out of Bounds", GetInfo.information(roomNumber));
+	}
 }

@@ -1,4 +1,4 @@
-
+//returns the tenant's information for a room
 public class GetInfo extends TenantDatabase{
 	
 	public GetInfo(int roomNumber) {
