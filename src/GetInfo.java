@@ -1,6 +1,5 @@
 
 public class GetInfo extends TenantDatabase{
-	public String second = null;
 	
 	public GetInfo(int roomNumber) {
 

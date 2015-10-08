@@ -4,44 +4,11 @@ import java.util.Scanner;
 public class TenantDatabase {
 	//the variables below store information about each tenant
 	public static String[] nameArray = {"a","b","c","d","e","f","g","h"};
-	static String name1 = "a";
-	static String name2 = "b";
-	static String name3 = "c";
-	static String name4 = "d";
-	static String name5 = "e";
-	static String name6 = "f";
-	static String name7 = "g";
-	static String name8 = "h";
-	
 	public static String[] numberArray = {"(403)166-6890","(403)266-5588","(403)346-6790","(403)466-6233","(403)566-9575","(403)666-6688","(403)766-0003","(403)866-2462"};
-	static String number1 = "(403)166-6890";
-	static String number2 = "(403)266-5588";
-	static String number3 = "(403)346-6790";
-	static String number4 = "(403)466-6233";
-	static String number5 = "(403)566-9575";
-	static String number6 = "(403)666-6688";
-	static String number7 = "(403)766-0003";
-	static String number8 = "(403)866-2462";
-	
 	public static String[] emailArray = {"aaaaa@hotmail.com","bbbbb@hotmail.com","ccccc@hotmail.com","ddddd@hotmail.com","eeeee@hotmail.com","fffff@hotmail.com","ggggg@hotmail.com","hhhhh@hotmail.com"};
-	static String email1 = "aaaaa@hotmail.com";
-	static String email2 = "bbbbb@hotmail.com";
-	static String email3 = "ccccc@hotmail.com";
-	static String email4 = "ddddd@hotmail.com";
-	static String email5 = "eeeee@hotmail.com";
-	static String email6 = "fffff@hotmail.com";
-	static String email7 = "ggggg@hotmail.com";
-	static String email8 = "hhhhh@hotmail.com";
-	
 	public static String[] priceArray = {"100","200","300","400","500","600","700","800"};
-	static int price1 = 100;
-	static int price2 = 200;
-	static int price3 = 300;
-	static int price4 = 400;
-	static int price5 = 500;
-	static int price6 = 600;
-	static int price7 = 700;
-	static int price8 = 800;
+	public static int[] rentArray = {100, 200, 300, 400, 500, 600, 700, 800};
+	public static String[] depositArray = {"10","20","30","40","50","60","70","80"};
 	
 	public static void main(String[] args) {
 		
@@ -74,47 +41,35 @@ public class TenantDatabase {
 				System.out.println("Name: " + arrayInfo[0]);
 				System.out.println("Number: " + arrayInfo[1]);
 				System.out.println("Email: " + arrayInfo[2]);
-				System.out.println("Price: " + arrayInfo[3]);
+				System.out.println("Price: " + arrayInfo[3]+exit0());
 			}
 		}
 		
-		//this will tell you the amount of their deposit
-		if(first.equals("damaged") && second.equals("1")){
-			RentalProblems deduction = new RentalProblems(first,second);
-			deduction.damagedProperty1();
-		}else if(first.equals("damaged") && second.equals("2")){
-			RentalProblems deduction = new RentalProblems(first,second);
-			deduction.damagedProperty2();
-		}else if(first.equals("damaged") && second.equals("3")){
-			RentalProblems deduction = new RentalProblems(first,second);
-			deduction.damagedProperty3();
-		}else if(first.equals("damaged") && second.equals("4")){
-			RentalProblems deduction = new RentalProblems(first,second);
-			deduction.damagedProperty4();
-		}else if(first.equals("damaged") && second.equals("5")){
-			RentalProblems deduction = new RentalProblems(first,second);
-			deduction.damagedProperty5();
-		}else if(first.equals("damaged") && second.equals("6")){
-			RentalProblems deduction = new RentalProblems(first,second);
-			deduction.damagedProperty6();
-		}else if(first.equals("damaged") && second.equals("7")){
-			RentalProblems deduction = new RentalProblems(first,second);
-			deduction.damagedProperty7();
-		}else if(first.equals("damaged") && second.equals("8")){
-			RentalProblems deduction = new RentalProblems(first,second);
-			deduction.damagedProperty8();
+		if(first.equals("damaged")){
+			int roomNumber = Integer.parseInt(second);
+			if(roomNumber < 9 && roomNumber > 0){
+				DepositOwed depositReduction = new DepositOwed(roomNumber);
+				
+				System.out.println(nameArray[roomNumber - 1] + " is not getting their deposit of " + depositReduction.damagedRoom(roomNumber) +" back."+exit0());
+			}else{
+				System.out.println("Number is Out of Bounds.");
+			}
+			
 		}
-		
+
 		//outputs the total income per month
 		if(first.equals("monthly") && second.equals("income")){ //move to new class and reduce parameters
-			int incomePerMonth = price1 + price2 + price3 + price4 + price5 + price6 + price7 + price8;
-			System.out.println("Your monthly income is: " + incomePerMonth);
+			int incomePerMonth = 0;
+			for (i = 0; i != 8; i++){
+				incomePerMonth = incomePerMonth + rentArray[i];
+			}
+			System.out.println("Your monthly income is: " + incomePerMonth+exit0());
 		}
 		
 		
 		//gives a notice to tenants when the house sells
 		if(first.equals("house") && second.equals("sold")){
-			System.out.println(noticeToTenants());
+			System.out.println(noticeToTenants()+exit0());
 			
 		}
 		exit0();
@@ -128,7 +83,7 @@ public class TenantDatabase {
 	}
 	//exit prompt method
 	public static String exit0(){
-		String exitPrompt = "Thank you for using Tenant Database Software!";
+		String exitPrompt = "\nThank you for using Tenant Database Software! GoodBye!";
 		return exitPrompt;
 	}
 
