@@ -1,11 +1,9 @@
-import static org.junit.Assert.*;
-
 import java.util.Scanner;
 
-import org.junit.Test;
 
 public class TenantDatabase {
 	//the variables below store information about each tenant
+
 	static String name1 = "a";
 	static String name2 = "b";
 	static String name3 = "c";
@@ -44,8 +42,6 @@ public class TenantDatabase {
 	
 	public static void main(String[] args) {
 		
-		
-		//read input
 		System.out.println("Input: ");
 		Scanner reader = new Scanner(System.in);
 		String input = reader.nextLine();
@@ -71,53 +67,44 @@ public class TenantDatabase {
 				System.out.println("Name: " + name1);
 				System.out.println("Number: " + number1);
 				System.out.println("Email: " + email1);
-				exit0();
 				break;
 			case 2:
 				System.out.println("Name: " + name2);
 				System.out.println("Number: " + number2);
 				System.out.println("Email: " + email2);
-				exit0();
 				break;
 			case 3:
 				System.out.println("Name: " + name3);
 				System.out.println("Number: " + number3);
 				System.out.println("Email: " + email3);
-				exit0();
 				break;
 			case 4:
 				System.out.println("Name: " + name4);
 				System.out.println("Number: " + number4);
 				System.out.println("Email: " + email4);
-				exit0();
 				break;
 			case 5:
 				System.out.println("Name: " + name5);
 				System.out.println("Number: " + number5);
 				System.out.println("Email: " + email5);
-				exit0();
 				break;
 			case 6:
 				System.out.println("Name: " + name6);
 				System.out.println("Number: " + number6);
 				System.out.println("Email: " + email6);
-				exit0();
 				break;
 			case 7:
 				System.out.println("Name: " + name7);
 				System.out.println("Number: " + number7);
 				System.out.println("Email: " + email7);
-				exit0();
 				break;
 			case 8:
 				System.out.println("Name: " + name8);
 				System.out.println("Number: " + number8);
 				System.out.println("Email: " + email8);
-				exit0();
 				break;
 			default:
 				System.out.println("The number you have entered is out of range");
-				exit0();
 			}
 		}
 		
@@ -152,7 +139,6 @@ public class TenantDatabase {
 		if(first.equals("monthly") && second.equals("income")){ //move to new class and reduce parameters
 			int incomePerMonth = price1 + price2 + price3 + price4 + price5 + price6 + price7 + price8;
 			System.out.println("Your monthly income is: " + incomePerMonth);
-			exit0();
 		}
 		
 		
@@ -161,17 +147,19 @@ public class TenantDatabase {
 			System.out.println(noticeToTenants());
 			
 		}
+		exit0();
 		
 	}
 	
-
+	//notice to tenants after house sells
 	public static String noticeToTenants(){
 		String notice = "The house has been sold! You have been given a 3 month notice to move out!";
 		return notice;
 	}
 	//exit prompt method
-	public static void exit0(){
-		System.out.println("Thank you for using Tenant Database Software!");
+	public static String exit0(){
+		String exitPrompt = "Thank you for using Tenant Database Software!";
+		return exitPrompt;
 	}
 
 }

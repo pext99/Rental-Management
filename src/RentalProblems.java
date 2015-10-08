@@ -31,40 +31,27 @@ public class RentalProblems {
 	//deposit amount
 	void damagedProperty1(){
 		System.out.println(name1 + " is not getting their deposit of " + deposit1 + " back.");
-		exit0();
 	}
 	void damagedProperty2(){
 		System.out.println(name2 + " is not getting their deposit of " + deposit2 + " back.");
-		exit0();
 	}
 	void damagedProperty3(){
 		System.out.println(name3 + " is not getting their deposit of " + deposit3 + " back.");
-		exit0();
 	}
 	void damagedProperty4(){
 		System.out.println(name4 + " is not getting their deposit of " + deposit4 + " back.");
-		exit0();
 	}
 	void damagedProperty5(){
 		System.out.println(name5 + " is not getting their deposit of " + deposit5 + " back.");
-		exit0();
 	}
 	void damagedProperty6(){
 		System.out.println(name6 + " is not getting their deposit of " + deposit6 + " back.");
-		exit0();
 	}
 	void damagedProperty7(){
 		System.out.println(name7 + " is not getting their deposit of " + deposit7 + " back.");
-		exit0();
 	}
 	void damagedProperty8(){
 		System.out.println(name8 + " is not getting their deposit of " + deposit8 + " back.");
-		exit0();
-	}
-	
-	//exit prompt method
-	public static void exit0(){
-		System.out.println("Thank you for using Tenant Database Software!");
 	}
 	
 }
